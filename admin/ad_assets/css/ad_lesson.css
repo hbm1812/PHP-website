@@ -1,0 +1,14 @@
+h3{
+    text-align: center;
+}
+h4{
+    text-align: center;
+}
+h5{
+    font-weight: bold;
+    color: rgb(1, 134, 196);
+}
+.form-control{
+    border: none!important;
+    border: white;
+}

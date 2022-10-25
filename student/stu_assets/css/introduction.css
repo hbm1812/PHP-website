@@ -1,0 +1,56 @@
+/* start CSS body here  */
+h3{
+    text-align: center;
+}
+h4{
+    text-align: center;
+}
+.choose_role{
+    display: inline-block;
+    
+    }
+    .form-select-role{
+        border: none;
+    }
+    
+    .choose_category{
+        display: inline-block;
+    }
+    
+    .form-select-category{
+        border: none;
+    }
+    
+    
+    
+    
+    .card{
+        display: inline-block!important;
+        margin: 1%;
+    
+    }
+    
+    
+    .card-img-top{
+        width: 100px;
+        height:200px;
+    }
+    
+    .course_icon_btn{
+        width: 10%;
+        height: 10%;
+    }
+    .btn-primary{
+        display: flex;
+        direction: row;
+    }
+    
+    .icon_btn img {
+        width: 8%;
+        height: 7%;
+        z-index: 60;
+        position: absolute;
+        cursor: pointer;
+        top:1%;
+        right: 1%;
+    }

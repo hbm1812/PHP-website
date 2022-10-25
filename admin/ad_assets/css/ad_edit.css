@@ -1,0 +1,15 @@
+.choose_role {
+    display: inline-block;
+    border: 1px solid black;
+
+}
+
+.form-select-role {
+    border: none;
+}
+
+
+h2{
+    text-align: center;
+    color: rgb(1, 134, 196);
+}
