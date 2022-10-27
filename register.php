@@ -43,6 +43,7 @@ if (isset($_POST['submit'])) {
         $dataRegisterInfor = ['email' => $_POST['email']];
 
         Auth::register($dataRegister);
+        Auth::register2($_POST['email']);
         // Auth::registerInfor($dataRegisterInfor);
 
         header('location:./login.php');

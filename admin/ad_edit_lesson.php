@@ -103,10 +103,10 @@ if (isset($_POST['add_new_hint'])) {
 
 
     <!--css file-->
-    <link rel="stylesheet" href="./te_assets/css/te_menu.css">
-    <link rel="stylesheet" href="./te_assets/css/te_boy_setting.css">
-    <link rel="stylesheet" href="./te_assets/css/te_add_subject.css">
-    <link rel="stylesheet" href="./te_assets/css/te_edit_lesson.css">
+    <link rel="stylesheet" href="./ad_assets/css/ad_menu.css">
+    <link rel="stylesheet" href="./ad_assets/css/ad_body_setting.css">
+    <link rel="stylesheet" href="./ad_assets/css/ad_add_subject.css">
+    <link rel="stylesheet" href="./ad_assets/css/ad_edit_lesson.css">
 
 
 
@@ -118,7 +118,7 @@ if (isset($_POST['add_new_hint'])) {
 <body style=" background-color: rgb(224, 224, 224)">
     <!--Navbar pc menu left-->
     <?php
-    include "/xampp/htdocs/W3schools/teacher/teacher_nav_menu_pc.php";
+    include "/xampp/htdocs/W3schools/admin/admin_nav_menu_pc.php";
     ?>
 
     <!--body_content-->
@@ -126,7 +126,7 @@ if (isset($_POST['add_new_hint'])) {
         <div class="body__content-margin">
             <div class="body__content">
 
-                <form action="./te_edit_lesson.php" method="post">
+                <form action="./ad_edit_lesson.php" method="post">
                     <h2>Edit Lesson</h2>
                     <br>
                     <br>
@@ -151,10 +151,14 @@ if (isset($_POST['add_new_hint'])) {
 
                     <label for="basic-url" class="form-label">Author</label>
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Username</span>
-                        <input type="text" class="form-control" placeholder="<?php echo $_SESSION['dataUser'] ?>" disabled>
-                        <span class="input-group-text">@email</span>
-                        <input type="text" class="form-control" placeholder="<?php echo $_SESSION['dataEmail'] ?>" disabled>
+                        <span class="input-group-text">Author:</span>
+                        <input type="text" class="form-control" placeholder="<?php 
+                             $find_account_id_with_account_number=Auth::find_account_id_with_account_number($find_Lesson['account_id']);
+                            echo $find_account_id_with_account_number['username'] ?>" disabled>
+                        <span class="input-group-text">Email</span>
+                        <input type="text" class="form-control" placeholder="<?php 
+                             $find_account_id_with_account_number=Auth::find_account_id_with_account_number($find_Lesson['account_id']);
+                            echo  $find_account_id_with_account_number['email'] ?>" disabled>
                     </div>
                     <br>
                     <hr>
@@ -163,7 +167,7 @@ if (isset($_POST['add_new_hint'])) {
 
                     <div class="input-group">
                         <span class="input-group-text">Target</span>
-                        <textarea class="form-control" aria-label="With textarea" name="target_content"  style="height: 400px !important;"><?php echo $find_Target['target_content'] ?></textarea>
+                        <textarea class="form-control" aria-label="With textarea" name="target_content" style="height: 400px !important;"><?php echo $find_Target['target_content'] ?></textarea>
                     </div>
                     <br>
 
@@ -222,7 +226,7 @@ if (isset($_POST['add_new_hint'])) {
                     ?>
 
                     <br>
-                    <a href="./te_my_introduction.php?subjects_id=<?= $_SESSION['subjects_id'] ?>" class="btn btn-primary btn_1 btn-lg">Back</a>
+                    <a href="./ad_my_introduction.php?subjects_id=<?= $_SESSION['subjects_id'] ?>" class="btn btn-primary btn_1 btn-lg">Back</a>
 
                     <button type="submit" class="btn btn-success btn-lg" name="submit">Update</button>
 
@@ -254,7 +258,7 @@ if (isset($_POST['add_new_hint'])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<script src="./te_assets/js/te_menu.js"></script>
+<script src="./ad_assets/js/ad_menu.js"></script>
 
 
 

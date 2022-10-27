@@ -12,3 +12,8 @@ h5{
     border: none!important;
     border: white;
 }
+
+
+textarea{
+    height: 400px !important;
+}

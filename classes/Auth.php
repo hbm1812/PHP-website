@@ -28,12 +28,26 @@ class Auth
         $sql = "insert into account(email, username, password, authority_id) values(:email, :username, :password, :authority_id)";
         DB::execute($sql, $dataRegister);
     }
+    // static public function account_id_to_insert_information($email)
+    // {
+    //     $sql = "select * from account where email=:email";
+    //     $dataFind = ['email' => $email];
+    //     $account_id_to_insert_information = DB::execute($sql, $dataFind);
+    //     return count($account_id_to_insert_information) > 0 ? $account_id_to_insert_information[0] : [];
+    // }
+    static public function register2($email)
+    {
+        $sql = "insert into information(email) values(:email)";
+        $dataRegister2 = ['email' => $email];
+        DB::execute($sql, $dataRegister2);
+    }
+
 
     static public function get_Account_Username($account_id)
     {
         $sql = "select * from account where account_id=:account_id";
         $dataFind = ['account_id' => $account_id];
-        $get_Account_Username= DB::execute($sql, $dataFind);
+        $get_Account_Username = DB::execute($sql, $dataFind);
         return count($get_Account_Username) > 0 ? $get_Account_Username[0] : [];
     }
 
@@ -41,7 +55,7 @@ class Auth
     {
         $sql = "select * from account where account_id=:account_id";
         $dataFind = ['account_id' => $accountSB_id];
-        $get_Account_Username= DB::execute($sql, $dataFind);
+        $get_Account_Username = DB::execute($sql, $dataFind);
         return count($get_Account_Username) > 0 ? $get_Account_Username[0] : [];
     }
 
@@ -63,6 +77,14 @@ class Auth
         $sql = "select * from subjects,account where subjects.account_id = account.account_id and subjects.account_id=:account_id";
         $dataFind = ['account_id' => $account_id];
         $subjects = DB::execute($sql, $dataFind);
+        return $subjects;
+    }
+
+    //ham hien thi cac khoa hoc
+    static public function show_Subjects_admin()
+    {
+        $sql = "select * from subjects";
+        $subjects = DB::execute($sql);
         return $subjects;
     }
 
@@ -164,6 +186,43 @@ class Auth
         $contents = DB::execute($sql, $dataFind);
         return $contents;
     }
+
+
+    //ham lay thong tin  tai khoan
+    static public function get_information_and_account($account_id)
+    {
+        $sql = "select * from information, account where information.account_id=account.account_id and account.account_id=:account_id";
+        $dataFind = ['account_id' => $account_id];
+        $get_information_and_account = DB::execute($sql, $dataFind);
+        return count($get_information_and_account) > 0 ? $get_information_and_account[0] : [];
+    }
+
+
+    static public function update_Password($dataUpdatePassword)
+    {
+        $sql = "update account set password=:password where account_id =:account_id";
+        DB::execute($sql, $dataUpdatePassword);
+    }
+
+    static public function update_Information($dataUpdateInformation)
+    {
+        $sql = "update information set fullname=:fullname where account_id =:account_id";
+        DB::execute($sql, $dataUpdateInformation);
+    }
+    static public function update_Account($dataUpdateAccount)
+    {
+        $sql = "update account set username=:username where account_id = :account_id";
+        DB::execute($sql, $dataUpdateAccount);
+    }
+
+
+    static public function update_Information_account_id($dataUpdateAccount_id)
+    {
+        $sql = "update information set account_id=:account_id where email = :email";
+        DB::execute($sql, $dataUpdateAccount_id);
+    }
+
+
 
 
 
@@ -324,71 +383,130 @@ class Auth
 
 
 
-    static public function delete($id){
-        $sql="delete from hint where hint_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function delete($id)
+    {
+        $sql = "delete from hint where hint_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
 
-    static public function deleteVideo($id){
-        $sql="delete from video where video_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function deleteVideo($id)
+    {
+        $sql = "delete from video where video_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
-  //delete lesson
-    static public function delete_Lesson($id){
-        $sql="delete from lesson where lesson_id=:id";
-        $dataDelete=['id'=>$id];
+    //delete lesson
+    static public function delete_Lesson($id)
+    {
+        $sql = "delete from lesson where lesson_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
-    static public function delete_introduction($id){
-        $sql="delete from introduction where lesson_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function delete_introduction($id)
+    {
+        $sql = "delete from introduction where lesson_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
-    static public function delete_Lesson_Target($id){
-        $sql="delete from target where lesson_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function delete_Lesson_Target($id)
+    {
+        $sql = "delete from target where lesson_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
-    static public function delete_Lesson_video($id){
-        $sql="delete from video where lesson_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function delete_Lesson_video($id)
+    {
+        $sql = "delete from video where lesson_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
-    static public function delete_lesson_content($id){
-        $sql="delete from content where lesson_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function delete_lesson_content($id)
+    {
+        $sql = "delete from content where lesson_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
-    static public function delete_lesson_hint($id){
-        $sql="delete from hint where lesson_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function delete_lesson_hint($id)
+    {
+        $sql = "delete from hint where lesson_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
 
-    static public function delete_subjects($id){
-        $sql="delete from subjects where subjects_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function delete_subjects($id)
+    {
+        $sql = "delete from subjects where subjects_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
-    static public function delete_subjects_introduction($id){
-        $sql="delete from introduction where subjects_id=:id";
-        $dataDelete=['id'=>$id];
+    static public function delete_subjects_introduction($id)
+    {
+        $sql = "delete from introduction where subjects_id=:id";
+        $dataDelete = ['id' => $id];
         DB::execute($sql, $dataDelete);
     }
-    static public function get_subjects_introduction($id){
-        $sql="select * from introduction where subjects_id=:id";
-        $dataFind=['id'=>$id];
-        $get_subjects_introduction =DB::execute($sql, $dataFind);
+    static public function get_subjects_introduction($id)
+    {
+        $sql = "select * from introduction where subjects_id=:id";
+        $dataFind = ['id' => $id];
+        $get_subjects_introduction = DB::execute($sql, $dataFind);
         return count($get_subjects_introduction) > 0 ? $get_subjects_introduction[0] : [];
     }
 
-// ******************ADMIN********************
+    // ******************ADMIN********************
     //them moi khoa hoc
     static public function add_courses($dataAdd)
     {
         $sql = "insert into courses(  courses_name, courses_img, courses_depcription) values(  :courses_name, :courses_img, :courses_depcription)";
         DB::execute($sql, $dataAdd);
+    }
+
+
+    //lay thong tin khoa hoc
+    static public function get_courses($courses_id)
+    {
+        $sql = "select * from courses where courses_id=:courses_id";
+        $dataGet = ['courses_id' => $courses_id];
+        $getCourses = DB::execute($sql, $dataGet);
+        return count($getCourses) > 0 ? $getCourses[0] : [];
+    }
+
+
+    static public function update_Course($dataUpdateCourses)
+    {
+        $sql = "update courses set courses_name=:courses_name, courses_img=:courses_img, courses_depcription=:courses_depcription where courses_id=:courses_id";
+        DB::execute($sql, $dataUpdateCourses);
+    }
+    static public function find_account_id_with_account_number($account_id)
+    {
+        $sql = "select * from account where account_id=:account_id";
+        $dataFind = ['account_id' => $account_id];
+        $find_account_id_with_account_number = DB::execute($sql, $dataFind);
+        return count($find_account_id_with_account_number) > 0 ?  $find_account_id_with_account_number[0] : [];
+    }
+
+    static public function find_account_id($subjects_id)
+    {
+        $sql = "select * from account, subjects where account.account_id= subjects.account_id and subjects.subjects_id=:subjects_id";
+        $dataFind = ['subjects_id' => $subjects_id];
+        $find_account_id = DB::execute($sql, $dataFind);
+        return count($find_account_id) > 0 ?  $find_account_id[0] : [];
+    }
+
+
+    static public function delete_Courses($id)
+    {
+        $sql = "delete from courses where courses_id=:id";
+        $dataDelete = ['id' => $id];
+        DB::execute($sql, $dataDelete);
+    }
+
+    static public function get_id_subjects($id)
+    {
+        $sql = "select * from subjects where courses_id=:id";
+        $dataFind = ['id' => $id];
+        $get_id_subjects = DB::execute($sql, $dataFind);
+        return count($get_id_subjects) > 0 ? $get_id_subjects[0] : [];
     }
 }

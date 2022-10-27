@@ -13,3 +13,7 @@ h5{
     border: white;
     background-color: white;
 }
+
+textarea{
+    height: 400px !important;
+}

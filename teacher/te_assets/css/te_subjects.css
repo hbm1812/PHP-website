@@ -51,3 +51,10 @@ h3{
         top:1%;
         right: 1%;
     }
+    h5{
+        -webkit-line-clamp: 1 !important;
+        -webkit-box-orient: vertical;
+        overflow: hidden!important;
+        text-overflow: ellipsis;
+        display: -webkit-box!important;
+    }

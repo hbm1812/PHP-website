@@ -49,7 +49,7 @@ $user=Auth::getUsername( $account_id);
 
                     </div>
                 </a>
-                <a href="./ad_my_subjects.php" class="nav__link">
+                <a href="./ad_my_courses.php" class="nav__link">
                     <div class="nav__hover">
 
                         <span><img src="./ad_assets/img/icon/edit.png" alt="" class="icon_img"></span>

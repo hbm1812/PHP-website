@@ -1,6 +1,11 @@
 <?php
 include '/xampp/htdocs/W3schools/classes/Auth.php';
 $courses = Auth::show_Course();
+$dataUpdateAccount_id = [
+    'account_id' => $_SESSION['account_id'],
+    'email'=>$_SESSION['dataEmail']
+];
+Auth::update_Information_account_id($dataUpdateAccount_id);
 ?>
 
 <!DOCTYPE html>
