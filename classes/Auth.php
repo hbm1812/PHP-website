@@ -509,4 +509,43 @@ class Auth
         $get_id_subjects = DB::execute($sql, $dataFind);
         return count($get_id_subjects) > 0 ? $get_id_subjects[0] : [];
     }
+
+    static public function show_all_account()
+    {
+        $sql = "select * from account";
+        $accounts= DB::execute($sql);
+        return $accounts; 
+    }
+    static public function show_account($account_id){
+        $sql="select * from information where account_id=:account_id";
+        $dataFind = ['account_id' => $account_id];
+        $account = DB::execute($sql, $dataFind);
+        return count($account) >0 ? $account[0]:[];
+    }
+
+    static public function account_change_password($dataUpdate){
+        $sql="update account set password=:password where account_id=:account_id";
+         DB::execute($sql, $dataUpdate);
+    }
+
+    static public function delete_account($account_id){
+        $sql="delete from account where account_id=:account_id";
+        $dataDelete=['account_id'=>$account_id];
+        DB::execute($sql, $dataDelete);
+    }
+    static public function find_account_delete($account_id){
+        $sql="select * from account where account_id=:account_id";
+        $dataFind = ['account_id' => $account_id];
+        $account = DB::execute($sql, $dataFind);
+        return count($account) >0 ? $account[0]:[];
+    }
+
+    static public function delete_information($email){
+        $sql="delete from information where email=:email";
+        $dataDelete=['email'=>$email];
+        DB::execute($sql, $dataDelete);
+    }
+
+
+
 }

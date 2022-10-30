@@ -206,7 +206,7 @@ if (isset($_POST['change'])) {
                                 <span><?php echo (isset($err['rPassword'])) ? $err['rPassword'] : "" ?></span>
                             </div>
                             <div class="form-outline mb-4">
-                                <input id="form3Example3" class="form-control" name="rPassword" type="rPassword" />
+                                <input id="form3Example3" class="form-control" name="rPassword" type="Password" />
                                 <label class="form-label" for="form3Example3"> Nhập lại mật khẩu mới</label>
 
 

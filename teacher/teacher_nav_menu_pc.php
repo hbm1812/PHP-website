@@ -17,12 +17,12 @@ $user=Auth::getUsername( $account_id);
             </summary>
             <br>
             <div>
-                <a href="" class="nav__link">
+                <!-- <a href="" class="nav__link">
                     <div class="nav__hover">
                         <span><img src="./te_assets/img/icon/setting.png" alt=""  class="icon_img"></span>
                         Account
                     </div>
-                </a>
+                </a> -->
                 
                 <a href="./te_add_subject.php" class="nav__link">
                     <div class="nav__hover">
@@ -66,8 +66,7 @@ $user=Auth::getUsername( $account_id);
             <br>
             <br>
             <br>
-            <br>
-            <br>
+            
         </details>
         <hr>
         <div class="nav__list">
@@ -86,7 +85,7 @@ $user=Auth::getUsername( $account_id);
                     </span>Courses
                 </div>
             </a>
-            <a href="./stu_quiz_history.php" class="nav__link">
+            <!-- <a href="./stu_quiz_history.php" class="nav__link">
                 <div class="nav__hover">
                     <span>
                         <img src="./te_assets/img/icon/quizzes.png" alt="" class="icon_img">
@@ -106,7 +105,7 @@ $user=Auth::getUsername( $account_id);
                         <img src="./te_assets/img/icon/presentation.png" alt="" class="icon_img">
                     </span>Certification
                 </div>
-            </a>
+            </a> -->
         </div>
     </div>
 

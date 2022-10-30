@@ -17,7 +17,7 @@ $user=Auth::getUsername( $account_id);
             </summary>
             <br>
             <div>
-                <a href="" class="nav__link">
+                <a href="./ad_account.php" class="nav__link">
                     <div class="nav__hover">
                         <span><img src="./ad_assets/img/icon/setting.png" alt=""  class="icon_img"></span>
                         Account

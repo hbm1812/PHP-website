@@ -82,3 +82,20 @@ if(isset($_POST['id_courses'])) //nếu có tồn tại $_POST['id'] không
     $_SESSION['message']="this lesson not found";
 
 }
+
+
+
+
+if(isset($_POST['account_delete'])) //nếu có tồn tại $_POST['id'] không
+{
+    $account_id=$_POST['account_delete'];
+  
+    $account=Auth::find_account_delete($account_id);
+    echo $account['email'];
+    $_SESSION['email']=$account['email'];
+    Auth::delete_information($_SESSION['email']);
+    Auth::delete_account($account_id);
+    header("location:./ad_account.php");
+}else{
+    header("location:./ad_account.php");
+}

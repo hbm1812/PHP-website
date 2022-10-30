@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Subject</title>
+    <title>Edit Subject</title>
 
     <!--tab icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="https://lms.deha-soft.com/images/favicon.ico/apple-icon-57x57.png">
@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
             <div class="body__content">
 
                 <form action="" method="post">
-                    <h2>Add new subject</h2>
+                    <h2>Edit subject</h2>
                     <h5>Choose course</h5>
                    
                     
