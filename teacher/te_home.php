@@ -44,31 +44,53 @@ $courses = Auth::show_Course();
 </head>
 
 <body style=" background-color: rgb(224, 224, 224)">
-    <!--Navbar pc menu left-->
-    <?php
-    include "/xampp/htdocs/W3schools/teacher/teacher_nav_menu_pc.php";
-    ?>
+  <!--Navbar pc menu left-->
+  <?php
+  include "/xampp/htdocs/W3schools/teacher/teacher_nav_menu_pc.php";
+  ?>
 
-    <!--body_content-->
-    <div class=body__container>
-        <div class="body__content-margin">
-            <div class="body__content">
-                <h4>HELLO GIÁO VIÊN</h4>
-                
+  <!--body_content-->
+  <div class=body__container>
+    <div class="body__content-margin">
+      <div class="body__content">
+        <h4>HELLO GIÁO VIÊN</h4>
 
-
+        <hr>
+        <h4>Tin tức</h4>
+        <div style="flex-direction: row; display:flex;">
+          <div class="card" style="width: 18rem; margin-right:20px">
+            <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/316535674_566046138862174_646003536429564336_n.jpg?stp=dst-jpg_p600x600&_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=wndzQYIciMsAX8AUCpa&_nc_ht=scontent.fhan5-8.fna&oh=00_AfD5KiPbAkE1Lws_1trgqTK_ZGqrogUIwa_0DWRAeQUP2A&oe=638E6C32" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">5 POPULAR TEST AUTOMATION TOOLS FOR REACT NATIVE APP</h5>
+              <p class="card-text" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">React Native has been a popular topic in the world of mobile development for a number of years..</p>
+              <a href="#" class="btn btn-primary">Xem thêm</a>
             </div>
+          </div>
+
+          <div class="card" style="width: 18rem; margin-right:20px">
+            <img src="https://scontent.fhan5-7.fna.fbcdn.net/v/t39.30808-6/315889781_564298612370260_7211738574589179008_n.jpg?stp=dst-jpg_p526x296&_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_ohc=8gsdLs6IRiQAX-VM2jS&tn=4hluNjQfyIPsddy1&_nc_ht=scontent.fhan5-7.fna&oh=00_AfANzPuLCNJW3a-hT_Vfp3_fIkkfAOL-fRBJ6pd_tcsD_A&oe=638DE932" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">DEVOPS VS DEVSECOPS: WHAT’S DIFFERENT?</h5>
+              <p class="card-text" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">DevOps and DevSecOps share many similarities. The two methods employ both automation and continuous monitoring and have a very similar culture. </p>
+              <a href="#" class="btn btn-primary">Xem thêm</a>
+            </div>
+          </div>
+
         </div>
-    </div>
 
-    <!--footer-->
-    <div>
-
+      </div>
     </div>
+  </div>
+
+  <!--footer-->
+  <div>
+
+  </div>
 
 
 </body>
-  <!--JS file-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
-  <script src="./te_assets/js/te_menu.js"></script>
+<!--JS file-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+<script src="./te_assets/js/te_menu.js"></script>
+
 </html>

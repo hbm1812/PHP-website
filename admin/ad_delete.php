@@ -97,5 +97,5 @@ if(isset($_POST['account_delete'])) //nếu có tồn tại $_POST['id'] không
     Auth::delete_account($account_id);
     header("location:./ad_account.php");
 }else{
-    header("location:./ad_account.php");
+    // header("location:./ad_account.php");
 }
